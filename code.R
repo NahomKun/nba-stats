@@ -1,3 +1,7 @@
+#install packages
+install.packages("nbastatsR")
+install.packages("readr")
+
 #create a folder to set a directory 
 setwd("path to folder")
 library(nbastatR)
@@ -23,7 +27,7 @@ Cleanlogs <- logs %>% nest_by(idGame)
 #pull unique Game Ids to scrape Advanced data
 Gameids <- unique(Cleanlogs, by ="idGame")
 
-#to speed up scraping process 
+#to speed up scraping 
 Sys.setenv(VROOM_CONNECTION_SIZE=9000000000)
 
 ##Importing Advanced data
